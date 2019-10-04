@@ -1,1 +1,1 @@
-PRODUCT_MAKEFILES := $(LOCAL_PATH)/omni_matissewifi.mk
+PRODUCT_MAKEFILES := device/samsung/matissewifi/omni_matissewifi.mk
