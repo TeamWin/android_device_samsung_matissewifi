@@ -30,7 +30,7 @@ BOARD_KERNEL_CMDLINE := androidboot.console=null androidboot.hardware=qcom andro
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x01e00000
-BOARD_CUSTOM_BOOTIMG_MK := device/samsung/matisselte/mkbootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/samsung/matissewifi/mkbootimg.mk
 
 # Ramdisk
 LZMA_RAMDISK_TARGETS := boot,recovery
