@@ -1,3 +1,5 @@
+DEVICE_TREE := device/samsung/matissewifi
+
 CM_PLATFORM_SDK_VERSION := 7	# Required for libf2fs.so
 override TARGET_OUT_VENDOR_SHARED_LIBRARIES = $(TARGET_OUT_SHARED_LIBRARIES)
 
@@ -26,11 +28,11 @@ TARGET_KERNEL_CONFIG := lineage_matissewifi_defconfig
 KERNEL_TOOLCHAIN_PREFIX := arm-linux-androideabi-
 
 # Boot image
-BOARD_KERNEL_CMDLINE := androidboot.console=null androidboot.hardware=qcom androidboot.bootdevice=msm_sdcc.1
+BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom msm_rtb.filter=0x37 androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x01e00000
-BOARD_CUSTOM_BOOTIMG_MK := device/samsung/matissewifi/mkbootimg.mk
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x1e00000
+BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_TREE)/mkbootimg.mk
 
 # Ramdisk
 LZMA_RAMDISK_TARGETS := boot,recovery
@@ -48,7 +50,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 # Filesystems
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
-#TARGET_USERIMAGES_USE_F2FS := true
+TARGET_USERIMAGES_USE_F2FS := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 
 # TWRP
