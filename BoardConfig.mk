@@ -76,4 +76,3 @@ TW_MTP_DEVICE := "/dev/mtp_usb"
 TW_INCLUDE_CRYPTO := true
 TW_NO_EXFAT_FUSE := true
 TW_NO_LEGACY_PROPS := true
-
